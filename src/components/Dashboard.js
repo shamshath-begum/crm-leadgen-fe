@@ -5,11 +5,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
-import Navbar from "./Navbar";
+
 import Card from "react-bootstrap/Card";
-import { read, utils, writeFileXLSX } from "xlsx";
+import { utils, writeFileXLSX } from "xlsx";
 import PieChart from "../charts/PieChart";
-import DashboardLeasdInfo from "./DashboardLeasdInfo";
 
 function Dashboard() {
   let token = sessionStorage.getItem("token");

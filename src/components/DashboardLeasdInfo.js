@@ -3,11 +3,10 @@ import { url } from "../App";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
 
 function DashboardLeasdInfo() {
-  let { id } = useParams();
   let token = sessionStorage.getItem("token");
 
   let [leads, setLeads] = useState([]);
@@ -45,7 +44,6 @@ function DashboardLeasdInfo() {
     navigate(`/manage-lead/${e._id}`);
   };
 
-  let handleDelete = () => {};
   return (
     <>
       <div className="container-fluid">

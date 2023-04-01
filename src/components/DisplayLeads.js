@@ -5,7 +5,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Table from "react-bootstrap/Table";
-import { NavLink } from "react-router-dom";
 
 function DisplayLeads() {
   let token = sessionStorage.getItem("token");

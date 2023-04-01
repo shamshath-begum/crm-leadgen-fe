@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import Card from "react-bootstrap/Card";
 
 function LeadInfo() {
   let [firstName, setfirstName] = useState("");
