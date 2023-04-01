@@ -71,7 +71,7 @@ function Dashboard() {
     } else {
       handleLogout();
     }
-  }, [token, card]);
+  }, [token]);
 
   return (
     <>
