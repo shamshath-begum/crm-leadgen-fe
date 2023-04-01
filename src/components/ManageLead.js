@@ -104,7 +104,7 @@ function ManageLead() {
     } else {
       handleLogout();
     }
-  }, []);
+  }, [id]);
 
   return (
     <>

@@ -25,7 +25,7 @@ function ForgotPassword() {
 
   useEffect(() => {
     validUser();
-  }, []);
+  }, [token]);
   let handleClick = async (e) => {
     e.preventDefault();
     try {

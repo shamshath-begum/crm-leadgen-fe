@@ -71,7 +71,7 @@ function Dashboard() {
     } else {
       handleLogout();
     }
-  }, []);
+  }, [token, card]);
 
   return (
     <>
@@ -79,9 +79,10 @@ function Dashboard() {
         <Button onClick={() => navigate("/display-lead")}>LEADS</Button>
       </div>
       <div className="card-wrapper d-flex justify-content-evenly flex-wrap">
-        {cards.map((e, i) => {
+        {cards?.map((e, i) => {
           return (
             <Card
+              key={i}
               style={{ width: "15rem", cursor: "pointer" }}
               className="shadow mt-5 mb-5 "
               onClick={() => {

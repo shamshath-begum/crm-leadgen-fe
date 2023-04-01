@@ -18,33 +18,29 @@ function PieChart() {
 
   let token = sessionStorage.getItem("token");
 
-  // let [leads, setLeads] = useState([]);
-  // let [cards, setCards] = useState([]);
-  // let [selectedStatus, setSelectedStatus] = useState("");
-  // let navigate = useNavigate();
-
   let getData = async () => {
     let res = await axios.get(`${url}/chart-details`, {
       headers: {
         authorization: `Bearer ${token}`,
       },
     });
-    console.log(res.data.leads);
-    setListdata(res.data.leads);
+
+    setListdata(res?.data.leads);
   };
 
   useEffect(() => {
     if (token) {
       getData();
     }
-  }, []);
-  console.log(listdata);
+  }, [token, listdata]);
+
   return (
     <>
       <LineChart
         width={500}
         height={300}
         data={listdata}
+        key={listdata?.map((d, i) => i)}
         margin={{
           top: 6,
           right: 30,
