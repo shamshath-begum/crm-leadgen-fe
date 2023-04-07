@@ -25,14 +25,14 @@ function PieChart() {
       },
     });
 
-    setListdata(res?.data.leads);
+    setListdata(res.data.leads);
   };
 
   useEffect(() => {
     if (token) {
       getData();
     }
-  }, [token, listdata]);
+  }, [token]);
 
   return (
     <>
@@ -40,7 +40,6 @@ function PieChart() {
         width={500}
         height={300}
         data={listdata}
-        key={listdata?.map((d, i) => i)}
         margin={{
           top: 6,
           right: 30,

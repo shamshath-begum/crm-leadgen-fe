@@ -58,7 +58,7 @@ function DisplayLeads() {
     } else {
       handleLogout();
     }
-  }, [token, leads]);
+  }, [token]);
 
   return (
     <>

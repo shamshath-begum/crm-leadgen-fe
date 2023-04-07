@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
 import Card from "react-bootstrap/Card";
-import { useNavigate } from "react-router-dom";
+
 import { NavLink } from "react-router-dom";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 function SideBar() {
   const [role, setRole] = useState("");
-  let navigate = useNavigate();
 
   useEffect(() => {
     let res = sessionStorage.getItem("role");
@@ -24,7 +23,14 @@ function SideBar() {
             <h3 style={{ textAlign: "center" }}>SIDEBAR</h3>
           </Card.Header>
 
-          <ListGroup.Item style={{ height: "50px" }}>Dashboard</ListGroup.Item>
+          <ListGroup.Item style={{ height: "50px" }}>
+            <NavLink
+              style={{ color: "black", textDecoration: "none" }}
+              to="/dashboard"
+            >
+              <b>Dashboard</b>
+            </NavLink>
+          </ListGroup.Item>
           <ListGroup.Item>
             <NavDropdown
               title="LEADS"
@@ -61,30 +67,19 @@ function SideBar() {
               style={{ height: "100px" }}
             >
               <NavDropdown.Item>
-                <NavLink onClick={() => navigate("/incoming-leads")}>
+                <NavLink style={{ textDecoration: "none" }} to="/dashboard">
                   InComing
                 </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <NavLink onClick={() => navigate("/converted-leads")}>
+                <NavLink style={{ textDecoration: "none" }} to="/dashboard">
                   Converted
                 </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Item>
-                <NavLink onClick={() => navigate("/closed-leads")}>
+                <NavLink style={{ textDecoration: "none" }} to="/dashboard">
                   Closed
                 </NavLink>
-              </NavDropdown.Item>
-            </NavDropdown>
-          </ListGroup.Item>
-
-          <ListGroup.Item>
-            <NavDropdown title="REPORT" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
-                Lead Report
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Fees Report
               </NavDropdown.Item>
             </NavDropdown>
           </ListGroup.Item>

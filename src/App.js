@@ -11,7 +11,7 @@ import PasswordReset from "./components/PasswordReset";
 import SignUp from "./components/SignUp";
 import Home from "./homePage/Home";
 
-export const url = "http://localhost:8000";
+export const url = "https://crm-lead.onrender.com";
 function App() {
   return (
     <>
